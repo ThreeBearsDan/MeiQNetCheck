@@ -21,6 +21,7 @@ namespace MeiQNetCheck
             button2.Enabled = false;
             NetCheck nc = new NetCheck(textBox1, textBox2);
             nc.startCheckNet();
+            nc.Dispose();
             button1.Enabled = true;
             button2.Enabled = true;
         }
