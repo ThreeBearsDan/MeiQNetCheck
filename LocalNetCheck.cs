@@ -46,7 +46,12 @@ namespace MeiQNetCheck
                     {
                         _message = "[" + System.DateTime.UtcNow.AddHours(8) + "]本地网络连接：check ok, 本地网络配置正常" + System.Environment.NewLine;
                         _textBox.AppendText(_message);
+                        pingCheck.Dispose();
                         return true;
+                    }
+                    else
+                    {
+                        pingCheck.Dispose();
                     }
                 }
             }
