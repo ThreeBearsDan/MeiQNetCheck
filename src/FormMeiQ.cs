@@ -36,24 +36,7 @@ namespace MeiQNetCheck
             Thread dealNetCheck = new Thread(new ThreadStart(nc.startCheckNet));
             dealNetCheck.IsBackground = true;
             dealNetCheck.Start();
-            /**
-            CmdRunCommand _process = new CmdRunCommand();
-            _process.ProcessName = "cmd.exe";
-            _process.CommandName = "tracert www.qq.com";
-            _process.run();
-             * */
-            
-            //SystemInfo systemInfo = new SystemInfo();
-
-            //create a new thread deal own request
-            /*
-            MailToMeiQ sendMail = new MailToMeiQ();
-            sendMail.MailMessageBody = _process.ResultMessage;
-            Thread dealOwnNetCheck = new Thread(new ThreadStart(sendMail.AsyncSendMail));
-            dealOwnNetCheck.IsBackground = true;
-            dealOwnNetCheck.Start();
-             * */
-
+          
             nc.Dispose();
         }
 
