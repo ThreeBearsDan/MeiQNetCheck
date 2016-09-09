@@ -36,8 +36,6 @@ namespace MeiQNetCheck
             Thread dealNetCheck = new Thread(new ThreadStart(nc.startCheckNet));
             dealNetCheck.IsBackground = true;
             dealNetCheck.Start();
-          
-            nc.Dispose();
         }
 
         //buttonExit
