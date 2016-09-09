@@ -48,7 +48,7 @@ namespace MeiQNetCheck
          */
         public string getMessageOfOS()
         {
-            _message = "--------------------------------------------" + System.Environment.NewLine
+            _message = "-------------------------------------------------------------------" + System.Environment.NewLine
                 + "操作系统版本: " + _osVersion + System.Environment.NewLine
                 + "计算机名: " + _userName + System.Environment.NewLine
                 + ".NET Framework Versions: " + _dotNetVersion + System.Environment.NewLine;
