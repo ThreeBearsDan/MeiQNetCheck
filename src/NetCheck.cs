@@ -113,6 +113,13 @@ namespace MeiQNetCheck
                     }
                     else
                     {
+                        //到美洽服务器的相关信息 包括系统，dns，ping, 路由相关信息
+                        getRemoteServerCheckToMail();
+
+                        //mail to us
+                        _mailSend.MailMessageBody = _mailMessage;
+                        _mailSend.AsyncSendMail();
+                        
                         _message = "[" + System.DateTime.UtcNow.AddHours(8) + "]【到美洽远程服务器网络异常】" + System.Environment.NewLine;
                         _message += "[" + System.DateTime.UtcNow.AddHours(8) + "]到美洽远程服务器网络情况检测完成" + System.Environment.NewLine;
 
@@ -121,12 +128,6 @@ namespace MeiQNetCheck
                         _message += "______________________________________________________"
                                     + System.Environment.NewLine + System.Environment.NewLine;
                         Log.logToTextBox(_message, _formMeiQ);
-                        //到美洽服务器的相关信息 包括系统，dns，ping, 路由相关信息
-                        getRemoteServerCheckToMail();
-
-                        //mail to us
-                        _mailSend.MailMessageBody = _mailMessage;
-                        _mailSend.AsyncSendMail();
                     }
 
                 }
@@ -148,7 +149,7 @@ namespace MeiQNetCheck
             }
 
             _mailMessage += "-------------------------------------------------";
-
+            Dispose();
             validButton();
         }
 
